@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "com.xcvi.micros"
+    namespace = ""
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.xcvi.micros"
+        applicationId = ""
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -29,10 +29,10 @@ android {
             }
         }
 
-        val openAiKey = localProperties.getProperty("OPENAI_API_KEY")
-            ?: throw GradleException("OPENAI_API_KEY not found in local.properties")
+        val openAiKey = localProperties.getProperty("API_KEY")
+            ?: throw GradleException("API_KEY not found in local.properties")
 
-        buildConfigField("String", "OPENAI_API_KEY", "\"$openAiKey\"")
+        buildConfigField("String", "API_KEY", "\"apiKey\"")
     }
 
     buildTypes {
